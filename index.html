@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>John-117 Tribute Page</title>
+    <link href="styles.css" rel="stylesheet" />
+  </head>
+  <body>
+    <main id="main-doc">
+      <nav id="navbar">
+<header id="title">React</header>
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg" />
+<ul>
+<li><a href="#Quick_Start" class="nav-link">Quick Start</a></li>
+<li><a href="#Installation" class="nav-link">Installation</a></li>
+<li><a href="#Describing_the_UI" class="nav-link">Describing the UI</a></li>
+<li><a href="#Adding_Interactivity" class="nav-link">Adding Interactivity</a></li>
+<li><a href="#Managing_State" class="nav-link">Managing State</a></li>
+<li><a href="#Escape_Hatches" class="nav-link">Escape Hatches</a></li>
+<li><a href="#Reference" class="nav-link">Reference</a></li>
+</ul>
+      </nav>
+      <section class="main-section" id="Quick_Start">
+        <header>Quick Start</header>
+        <p>
+          Welcome to the React documentation! This page will give you an
+          introduction to the 80% of React concepts that you will use on a daily
+          basis.
+        </p>
+        <p>You will learn
+          <ul>
+          <li>How to create and nest components</li>
+          <li>How to add markup and styles</li>
+          <li>How to display data</li>
+          <li>How to render conditions and lists</li>
+          <li>How to respond to events and update the screen</li>
+          <li>How to share data between components</li>
+        </ul>
+        </p>
+        <pre>
+        <code>
+          function MyButton() {
+            return (
+              &lt;button&gt;I'm a button&lt;/button&gt;
+            );
+          }
+        </code>
+        </pre>
+      </section>
+      <section class="main-section" id="Installation">
+        <header>Installation</header>
+        <p>
+          React has been designed from the start for gradual adoption. You can
+          use as little or as much React as you need. Whether you want to get a
+          taste of React, add some interactivity to an HTML page, or start a
+          complex React-powered app, this section will help you get started.
+        </p>
+        <p>In this chapter
+          <ul>
+          <li>How to start a new React project</li>
+          <li>How to add React to an existing project</li>
+          <li>How to set up your editor</li>
+          <li>How to install React Developer Tools</li>
+        </ul>
+        </p>
+        <pre>
+          <code>
+            function Greeting(&#123; name &#125;) &#123;
+              return &lt;h1&gt;Hello, &#123;name&#125;&lt;/h1&gt;;
+            &#125;
+          
+            export default function App() &#123;
+              return &lt;Greeting name=&quot;world&quot; /&gt;;
+            &#125;
+          </code>          
+        </pre>
+      </section>
+      <section class="main-section" id="Describing_the_UI">
+        <header>Describing the UI</header>
+        <p>
+          React is a JavaScript library for rendering user interfaces (UI). UI
+          is built from small units like buttons, text, and images. React lets
+          you combine them into reusable, nestable components. From web sites to
+          phone apps, everything on the screen can be broken down into
+          components. In this chapter, you’ll learn to create, customize, and
+          conditionally display React components.
+        </p>
+        <p>In this chapter
+          <ul>
+          <li>How to write your first React component</li>
+          <li>When and how to create multi-component files</li>
+          <li>How to add markup to JavaScript with JSX</li>
+          <li>How to use curly braces with JSX to access JavaScript functionality from your components</li>
+          <li>How to configure components with props</li>
+          <li>How to conditionally render components</li>
+          <li>How to render multiple components at a time</li>
+          <li>How to avoid confusing bugs by keeping components pure</li>
+          <li>Why understanding your UI as trees is useful</li>
+        </ul>
+        </p>
+        <pre>
+          <code>
+            function Profile() &#123;
+              return (
+                &lt;img
+                  src=&quot;https://i.imgur.com/MK3eW3As.jpg&quot;
+                  alt=&quot;Katherine Johnson&quot;
+                /&gt;
+              );
+            &#125;
+          
+            export default function Gallery() &#123;
+              return (
+                &lt;section&gt;
+                  &lt;h1&gt;Amazing scientists&lt;/h1&gt;
+                  &lt;Profile /&gt;
+                  &lt;Profile /&gt;
+                  &lt;Profile /&gt;
+                &lt;/section&gt;
+              );
+            &#125;
+          </code>          
+        </pre>
+      </section>
+      <section class="main-section" id="Adding_Interactivity">
+        <header>Adding Interactivity</header>
+        <p>
+          Some things on the screen update in response to user input. For
+          example, clicking an image gallery switches the active image. In
+          React, data that changes over time is called state. You can add state
+          to any component, and update it as needed. In this chapter, you’ll
+          learn how to write components that handle interactions, update their
+          state, and display different output over time.
+        </p>
+        <p>
+          In this chapter
+          <ul>
+            <li>How to handle user-initiated events</li>
+            <li>How to make components “remember” information with state</li>
+            <li>How React updates the UI in two phases</li>
+            <li>Why state doesn’t update right after you change it</li>
+            <li>How to queue multiple state updates</li>
+            <li>How to update an object in state</li>
+            <li>How to update an array in state</li>
+          </ul>
+        </p>
+        <pre>
+          <code>
+            export default function App() &#123;
+              return (
+                &lt;Toolbar
+                  onPlayMovie=&#123;() =&gt; alert('Playing!')&#125;
+                  onUploadImage=&#123;() =&gt; alert('Uploading!')&#125;
+                /&gt;
+              );
+            &#125;
+          
+            function Toolbar(&#123; onPlayMovie, onUploadImage &#125;) &#123;
+              return (
+                &lt;div&gt;
+                  &lt;Button onClick=&#123;onPlayMovie&#125;&gt;
+                    Play Movie
+                  &lt;/Button&gt;
+                  &lt;Button onClick=&#123;onUploadImage&#125;&gt;
+                    Upload Image
+                  &lt;/Button&gt;
+                &lt;/div&gt;
+              );
+            &#125;
+          
+            function Button(&#123; onClick, children &#125;) &#123;
+              return (
+                &lt;button onClick=&#123;onClick&#125;&gt;
+                  &#123;children&#125;
+                &lt;/button&gt;
+              );
+            &#125;
+          </code>          
+        </pre>
+      </section>
+      <section class="main-section" id="Managing_State">
+        <header>Managing State</header>
+        <p>
+          As your application grows, it helps to be more intentional about how
+          your state is organized and how the data flows between your
+          components. Redundant or duplicate state is a common source of bugs.
+          In this chapter, you’ll learn how to structure your state well, how to
+          keep your state update logic maintainable, and how to share state
+          between distant components.
+        </p>
+        <p>In this chapter
+          <ul>
+          <li>How to think about UI changes as state changes</li>
+          <li>How to structure state well</li>
+          <li>How to “lift state up” to share it between components</li>
+          <li>How to control whether the state gets preserved or reset</li>
+          <li>How to consolidate complex state logic in a function</li>
+          <li>How to pass information without “prop drilling”</li>
+          <li>How to scale state management as your app grows</li>
+        </ul>
+        </p>
+        <pre>
+          <code>
+          import &#123; useState &#125; from 'react';
+        
+          export default function Form() &#123;
+            const [answer, setAnswer] = useState('');
+            const [error, setError] = useState(null);
+            const [status, setStatus] = useState('typing');
+        
+            if (status === 'success') &#123;
+              return &lt;h1&gt;That's right!&lt;/h1&gt;;
+            &#125;
+        
+            async function handleSubmit(e) &#123;
+              e.preventDefault();
+              setStatus('submitting');
+              try &#123;
+                await submitForm(answer);
+                setStatus('success');
+              &#125; catch (err) &#123;
+                setStatus('typing');
+                setError(err);
+              &#125;
+            &#125;
+        
+            function handleTextareaChange(e) &#123;
+              setAnswer(e.target.value);
+            &#125;
+        
+            return (
+              &lt;&gt;
+                &lt;h2&gt;City quiz&lt;/h2&gt;
+                &lt;p&gt;
+                  In which city is there a billboard that turns air into drinkable water?
+                &lt;/p&gt;
+                &lt;form onSubmit=&#123;handleSubmit&#125;&gt;
+                  &lt;textarea
+                    value=&#123;answer&#125;
+                    onChange=&#123;handleTextareaChange&#125;
+                    disabled=&#123;status === 'submitting'&#125;
+                  /&gt;
+                  &lt;br /&gt;
+                  &lt;button disabled=&#123;
+                    answer.length === 0 ||
+                    status === 'submitting'
+                  &#125;&gt;
+                    Submit
+                  &lt;/button&gt;
+                  &#123;error !== null &&
+                    &lt;p className="Error"&gt;
+                      &#123;error.message&#125;
+                    &lt;/p&gt;
+                  &#125;
+                &lt;/form&gt;
+              &lt;/&gt;
+            );
+          &#125;
+        
+          function submitForm(answer) &#123;
+            // Pretend it's hitting the network.
+            return new Promise((resolve, reject) => &#123;
+              setTimeout(() => &#123;
+                let shouldError = answer.toLowerCase() !== 'lima';
+                if (shouldError) &#123;
+                  reject(new Error('Good guess but a wrong answer. Try again!'));
+                &#125; else &#123;
+                  resolve();
+                &#125;
+              &#125;, 1500);
+            &#125;);
+          &#125;
+        </code>
+        </pre>
+      </section>
+      <section class="main-section" id="Escape_Hatches">
+        <header>Escape Hatches</header>
+        <p>
+          Some of your components may need to control and synchronize with
+          systems outside of React. For example, you might need to focus an
+          input using the browser API, play and pause a video player implemented
+          without React, or connect and listen to messages from a remote server.
+          In this chapter, you’ll learn the escape hatches that let you “step
+          outside” React and connect to external systems. Most of your
+          application logic and data flow should not rely on these features.
+        </p>
+        <p>In this chapter
+        <ul>
+          <li>How to “remember” information without re-rendering</li>
+          <li>How to access DOM elements managed by React</li>
+          <li>How to synchronize components with external systems</li>
+          <li>How to remove unnecessary Effects from your components</li>
+          <li>How an Effect’s lifecycle is different from a component's</li>
+          <li>How to prevent some values from re-triggering Effects</li>
+          <li>How to make your Effect re-run less often</li>
+          <li>How to share logic between components</li>
+        </ul>
+        </p>
+        <pre>
+          <code>
+  import &#123; useRef &#125; from 'react';
+
+  export default function Counter() &#123;
+    let ref = useRef(0);
+
+    function handleClick() &#123;
+      ref.current = ref.current + 1;
+      alert('You clicked ' + ref.current + ' times!');
+    &#125;
+
+    return (
+      &lt;button onClick=&#123;handleClick&#125;&gt;
+        Click me!
+      &lt;/button&gt;
+    );
+  &#125;
+        </code>
+
+        </pre>
+      </section>
+      <section class="main-section" id="Reference">
+        <header>Reference</header>
+        <p>All documentation taken from <a href="https://react.dev/learn">here</a></p>
+      </section>
+    </main>
+  </body>
+</html>
